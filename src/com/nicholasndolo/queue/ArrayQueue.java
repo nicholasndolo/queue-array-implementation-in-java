@@ -16,7 +16,7 @@ public class ArrayQueue {
 
 
     public void enqueque(int item){
-        if(count == items.length)
+        if(isFull())
             throw new IllegalStateException();
 
         items[rear] = item;
@@ -34,7 +34,7 @@ public class ArrayQueue {
     }
 
     public int peek(){
-        if(count == 0)
+        if(isEmpty())
             throw new NoSuchElementException();
 
         return items[front];
@@ -43,6 +43,11 @@ public class ArrayQueue {
     public boolean isEmpty(){
         return count == 0;
     }
+    public boolean isFull(){
+        return count == items.length;
+    }
+
+
 
     @Override
    public String toString(){
