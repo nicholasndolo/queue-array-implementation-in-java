@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ArrayQueue {
 
     private int[] items;
-    private int first;
+    private int front;
     private int rear;
     private int count;
 
@@ -19,7 +19,15 @@ public class ArrayQueue {
             throw new IllegalStateException();
 
         items[rear++] = item;
+        count++;
 
+    }
+
+    public int dequeue(){
+        var item = items[front];
+        items[front++] = 0;
+        count--;
+        return item;
     }
 
     @Override
