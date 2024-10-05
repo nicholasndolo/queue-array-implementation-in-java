@@ -40,6 +40,10 @@ public class ArrayQueue {
         return items[front];
     }
 
+    public boolean isEmpty(){
+        return count == 0;
+    }
+
     @Override
    public String toString(){
        return Arrays.toString(items);
