@@ -1,6 +1,7 @@
 package com.nicholasndolo.queue;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class ArrayQueue {
 
@@ -30,6 +31,13 @@ public class ArrayQueue {
         front = (front + 1) % items.length;
         count--;
         return item;
+    }
+
+    public int peek(){
+        if(count == 0)
+            throw new NoSuchElementException();
+
+        return items[front];
     }
 
     @Override
